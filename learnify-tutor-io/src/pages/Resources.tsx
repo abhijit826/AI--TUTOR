@@ -1,13 +1,25 @@
 
 import { Navigation } from "@/components/Navigation";
-import { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { BookOpen, Video, FileText, ExternalLink, Star, Play, Download, BookmarkPlus, Search } from "lucide-react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Sparkles } from "lucide-react";
-import { Resource } from "@/types/resources";
-import { ResourceCard } from "@/components/resources/ResourceCard";
-import { SearchBar } from "@/components/resources/SearchBar";
-import { FilterButtons } from "@/components/resources/FilterButtons";
-import { resources } from "@/data/resources";
+
+interface Resource {
+  id: string;
+  title: string;
+  type: string;
+  description: string;
+  icon: JSX.Element;
+  link: string;
+  difficulty: "Beginner" | "Intermediate" | "Advanced";
+  duration?: string;
+  tags: string[];
+  downloads?: number;
+  views?: number;
+}
 
 const Resources = () => {
   const [filter, setFilter] = useState<string>("all");
@@ -15,7 +27,6 @@ const Resources = () => {
   const [bookmarkedResources, setBookmarkedResources] = useState<string[]>([]);
   const { toast } = useToast();
 
-<<<<<<< HEAD
   const resources: Resource[] = [
     {
       id: "1",
@@ -53,8 +64,6 @@ const Resources = () => {
     }
   ];
 
-=======
->>>>>>> 6fd960695a6194bd1f1b8ee45457bdf670f739d8
   const handleBookmark = (resourceId: string) => {
     setBookmarkedResources(prev => {
       const newBookmarks = prev.includes(resourceId) 
@@ -121,16 +130,11 @@ const Resources = () => {
     });
 
   return (
-<<<<<<< HEAD
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-pink">
-=======
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-white to-purple-50">
->>>>>>> 6fd960695a6194bd1f1b8ee45457bdf670f739d8
       <Navigation />
       
       <div className="pt-24 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-<<<<<<< HEAD
           <span className="inline-block bg-blue-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full mb-4">
             Learning Resources
           </span>
@@ -139,23 +143,10 @@ const Resources = () => {
           </h1>
           <p className="text-xl text-indigo-600 max-w-2xl mx-auto">
             Access our curated collection of learning resources to support your mathematical journey.
-=======
-          <div className="inline-flex items-center justify-center gap-2 bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full mb-4">
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Learning Hub</span>
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            Educational Materials
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Access our curated collection of learning resources to support your mathematical journey
->>>>>>> 6fd960695a6194bd1f1b8ee45457bdf670f739d8
           </p>
         </div>
 
         <div className="max-w-xl mx-auto mb-8">
-<<<<<<< HEAD
           <div className="relative">
             <Search className="absolute left-3 top-3 h-4 w-4 text-indigo-500" />
             <Input
@@ -180,22 +171,9 @@ const Resources = () => {
             </Button>
           ))}
         </div>
-=======
-          <SearchBar 
-            value={searchQuery}
-            onChange={setSearchQuery}
-          />
-        </div>
-
-        <FilterButtons 
-          currentFilter={filter}
-          onFilterChange={setFilter}
-        />
->>>>>>> 6fd960695a6194bd1f1b8ee45457bdf670f739d8
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 text-indigo-800">
           {filteredResources.map((resource) => (
-<<<<<<< HEAD
             <Card key={resource.id} className="glass-card p-6 hover-transform">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center text-gray-700">
@@ -259,7 +237,7 @@ const Resources = () => {
               </div>
               
               <Button 
-                className="w-full mt-4 text-green-500" 
+                className="w-full mt-4" 
                 variant="outline"
                 onClick={() => handleResourceAction(resource)}
                 
@@ -273,15 +251,6 @@ const Resources = () => {
                 )}
               </Button>
             </Card>
-=======
-            <ResourceCard
-              key={resource.id}
-              resource={resource}
-              isBookmarked={bookmarkedResources.includes(resource.id)}
-              onBookmark={handleBookmark}
-              onAction={handleResourceAction}
-            />
->>>>>>> 6fd960695a6194bd1f1b8ee45457bdf670f739d8
           ))}
         </div>
       </div>

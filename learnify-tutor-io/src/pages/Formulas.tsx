@@ -147,11 +147,7 @@ const Formulas = () => {
             <span className="text-sm font-medium">Formula Library</span>
           </div>
           
-<<<<<<< HEAD
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent py-4">
-=======
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
->>>>>>> 6fd960695a6194bd1f1b8ee45457bdf670f739d8
             Trigonometric Formulas
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
