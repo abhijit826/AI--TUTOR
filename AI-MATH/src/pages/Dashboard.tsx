@@ -25,11 +25,11 @@ const Dashboard = () => {
   const { toast } = useToast();
 
   const performanceData = [
-    { date: "Mon", score: 85 },
-    { date: "Tue", score: 82 },
-    { date: "Wed", score: 89 },
-    { date: "Thu", score: 87 },
-    { date: "Fri", score: 92 },
+    { date: "Mon", score: 45 },
+    { date: "Tue", score: 32 },
+    { date: "Wed", score: 29 },
+    { date: "Thu", score: 17 },
+    { date: "Fri", score: 10 },
     { date: "Sat", score: 90 },
     { date: "Sun", score: 94 },
   ];

@@ -67,13 +67,13 @@ export const FloatingCalculator = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed bottom-4 right-4 z-50 w-18 h-19">
       {!isOpen ? (
         <Button
           onClick={() => setIsOpen(true)}
-          className="rounded-full w-12 h-12 bg-purple-600 hover:bg-purple-700 shadow-lg"
+          className="rounded-full w-20 h-20 bg-purple-600 hover:bg-purple-700 shadow-lg"
         >
-          <Calculator className="w-6 h-6" />
+          <Calculator className="w-18 h-18" />
         </Button>
       ) : (
         <Card className="p-4 bg-white/90 backdrop-blur-sm shadow-xl rounded-lg w-72 animate-in zoom-in-90 duration-200">
